@@ -23,7 +23,7 @@ const DefiningComponentOnTheGo = () => {
   const [hovered, setHovered] = React.useState(false);
   return (
     <>
-      <h1>Calling a function vs mounting a component</h1>
+      <h1>Defining a component on the go</h1>
 
       <div
         style={{
