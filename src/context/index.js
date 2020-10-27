@@ -63,7 +63,12 @@ const MemoGrandParent = React.memo(({ id, onClick }) => {
     return () => buttonDOM.removeEventListener("click", onClick);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  return <button ref={buttonRef}>React.memo(GrandParent {id}) </button>;
+  return (
+    <>
+      <div>React.memo(GrandParent {id})</div>
+      <button ref={buttonRef}>onClick prop</button>
+    </>
+  );
 });
 
 const CountContextProvider = ({ children }) => {
