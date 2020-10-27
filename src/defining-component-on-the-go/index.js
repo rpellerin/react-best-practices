@@ -1,6 +1,6 @@
 import React from "react";
 
-const fetchLotteryNumber = async (callback) => {
+const fetchRandomFact = async (callback) => {
   await new Promise((resolve) => setTimeout(resolve, 500));
   const response = await fetch("http://numbersapi.com/random");
   const body = await response.text();
@@ -8,11 +8,11 @@ const fetchLotteryNumber = async (callback) => {
 };
 
 const DefiningComponentOnTheGo = () => {
-  const LotteryTicket = () => {
+  const RandomFact = () => {
     const [randomFact, setRandomFact] = React.useState(null);
 
     React.useEffect(() => {
-      fetchLotteryNumber().then((body) => setRandomFact(body));
+      fetchRandomFact().then((body) => setRandomFact(body));
     }, []);
 
     if (!randomFact) return <div>Loading your random fact...</div>;
@@ -34,7 +34,7 @@ const DefiningComponentOnTheGo = () => {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        <LotteryTicket />
+        <RandomFact />
       </div>
     </>
   );
