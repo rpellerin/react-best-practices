@@ -5,6 +5,7 @@ import KeyProp from "./key-prop/index";
 import CallingFunction from "./calling-function/index";
 import Context from "./context/index";
 import DefiningComponentOnTheGo from "./defining-component-on-the-go/index";
+import UseRefUseCallback from "./useref-usecallback";
 
 const linkStyle = {
   display: "inline-block",
@@ -29,6 +30,9 @@ const App = () => (
       <Link style={linkStyle} to="/defining-component-on-the-go">
         Defining component on the go
       </Link>
+      <Link style={linkStyle} to="/useref-usecallback">
+        useRef() + useCallback()
+      </Link>
     </nav>
     <Switch>
       <Route path="/key-prop">
@@ -42,6 +46,9 @@ const App = () => (
       </Route>
       <Route path="/defining-component-on-the-go">
         <DefiningComponentOnTheGo />
+      </Route>
+      <Route path="/useref-usecallback">
+        <UseRefUseCallback />
       </Route>
     </Switch>
   </Router>
